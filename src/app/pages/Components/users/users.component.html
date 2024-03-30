@@ -1,0 +1,70 @@
+<div class="mat-elevation-z8 mt-5">
+  <table mat-table [dataSource]="dataSource" matSort>
+    <ng-container matColumnDef="id" sticky>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="tableHead">
+        ID
+      </th>
+      <td mat-cell *matCellDef="let row">{{ row.id }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="tableHead">
+        Name
+      </th>
+      <td
+        mat-cell
+        *matCellDef="let row"
+        (click)="clickedRows(row)"
+        class="name"
+      >
+        {{ row.first_name }} {{ row.last_name }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="tableHead">
+        E-mail
+      </th>
+      <td mat-cell *matCellDef="let row">
+        <a [href]="'mailto:' + row.email"
+          ><i class="fs-4 fa-solid fa-envelope"></i
+        ></a>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="avatar">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="tableHead">
+        Avatar
+      </th>
+      <td mat-cell *matCellDef="let row" (click)="clickedRows(row)">
+        <img class="avatar" [src]="row.avatar" alt="" />
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions" stickyEnd>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="tableHead">
+        Actions
+      </th>
+      <td mat-cell *matCellDef="let row">
+        <div class="icons d-flex justofy-content-center align-items-center">
+          <i class="fs-4 fa-solid fa-pen-to-square edit pe-2"></i>
+          <i class="fs-4 fa-solid fa-trash delete ps-2"></i>
+        </div>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+    <tr class="mat-row" *matNoDataRow></tr>
+  </table>
+
+  <mat-paginator
+    MatPaginator
+    [length]="UsersLength"
+    (page)="handlePageEvent($event)"
+    [pageSize]="pageSize"
+    [hidePageSize]="hidePageSize"
+    aria-label="Select page of users"
+  ></mat-paginator>
+</div>
