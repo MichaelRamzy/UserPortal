@@ -1,0 +1,38 @@
+table {
+  width: 100%;
+}
+.mat-elevation-z8 {
+  max-width: 100%;
+  overflow: auto;
+}
+
+td,
+th {
+  width: 20%;
+}
+.tableHead {
+  background-color: #089d7f !important;
+  color: white;
+}
+
+tr:hover {
+  border-top: 2px solid #dadada;
+  border-bottom: 2px solid #dadada;
+  background-color: #fafafa;
+  color: #089d7f;
+}
+.avatar {
+  cursor: pointer;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+.name {
+  cursor: pointer;
+}
+.delete {
+  color: rgb(210, 62, 62);
+}
+.edit {
+  color: rgb(34, 231, 227);
+}
