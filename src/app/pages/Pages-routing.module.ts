@@ -4,6 +4,7 @@ import { UsersComponent } from './Components/users/users.component';
 import { UserCardComponent } from './Components/user-card/user-card.component';
 import { UserListComponent } from './Components/user-list/user-list.component';
 const routes: Routes = [
+  { path: '', redirectTo: 'users', pathMatch: 'full' },
   { path: 'users', component: UsersComponent, pathMatch: 'full' },
   { path: 'userList', component: UserListComponent, pathMatch: 'full' },
   { path: 'users/:id', component: UserCardComponent, pathMatch: 'full' },
