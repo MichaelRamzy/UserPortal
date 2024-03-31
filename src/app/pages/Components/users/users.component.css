@@ -32,7 +32,9 @@ tr:hover {
 }
 .delete {
   color: rgb(210, 62, 62);
+  cursor: pointer !important;
 }
 .edit {
   color: rgb(34, 231, 227);
+  cursor: pointer !important;
 }
