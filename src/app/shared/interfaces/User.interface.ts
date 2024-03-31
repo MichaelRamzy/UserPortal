@@ -5,3 +5,10 @@ export interface User {
     last_name : string;
     avatar : string
 }
+export interface UserById {
+    data : User,
+    support : {
+        url : string;
+        text : string;
+    }
+}

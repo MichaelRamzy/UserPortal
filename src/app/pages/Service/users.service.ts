@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Users } from 'src/app/shared/interfaces/Users.interface';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { User, UserById } from 'src/app/shared/interfaces/User.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +18,9 @@ export class UsersService {
 
   getAllUsers(page : number):Observable<Users>{
     return this.http.get<Users>(`${this.baseUrl}/api/users?page=${page}`)
+  }
+  getUserById(Id : number):Observable<UserById>{
+    return this.http.get<UserById>(`${this.baseUrl}/api/users/${Id}`)
   }
 
   setFilterValue(filterValue: string) {
