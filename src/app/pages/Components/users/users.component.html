@@ -14,7 +14,7 @@
       <td
         mat-cell
         *matCellDef="let row"
-        (click)="clickedRows(row)"
+        [routerLink]="[row.id]"
         class="name"
       >
         {{ row.first_name }} {{ row.last_name }}
@@ -36,8 +36,8 @@
       <th mat-header-cell *matHeaderCellDef mat-sort-header class="tableHead">
         Avatar
       </th>
-      <td mat-cell *matCellDef="let row" (click)="clickedRows(row)">
-        <img class="avatar" [src]="row.avatar" alt="" />
+      <td mat-cell *matCellDef="let row" [routerLink]="[row.id]">
+        <img class="avatar" [src]="row.avatar" alt="Avatar" />
       </td>
     </ng-container>
 
@@ -68,3 +68,5 @@
     aria-label="Select page of users"
   ></mat-paginator>
 </div>
+
+

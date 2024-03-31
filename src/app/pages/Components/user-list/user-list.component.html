@@ -1,0 +1,12 @@
+<main>
+  <div class="user-container">
+    <div class="user-card p-3" *ngFor="let user of filterdUsers">
+      <app-user-card [userData]="user" class="mx-5"></app-user-card>
+    </div>
+  </div>
+
+  <div class="pagination">
+    <div class="page" (click)="handlePageination(1)" [ngClass]="{'active' : page == 1}">1</div>
+    <div class="page" (click)="handlePageination(2)" [ngClass]="{'active' : page == 2}">2</div>
+  </div>
+</main>

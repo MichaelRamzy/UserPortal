@@ -1,0 +1,39 @@
+main {
+  background-color: #afbcff;
+  height: fit-content;
+  min-height: calc(100vh - 58px) !important;
+}
+.user-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.user-card {
+  flex: 0 0 calc(33.33% - 10px);
+  margin-bottom: 20px;
+}
+
+.user-card {
+  max-width: 300px;
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.pagination .page {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin: 0 10px;
+}
+.pagination .page.active {
+  background-color: blue;
+  color: white;
+}

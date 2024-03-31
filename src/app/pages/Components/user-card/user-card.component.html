@@ -1,0 +1,32 @@
+<main *ngIf="userData"
+  [ngClass]="{
+    'main d-flex justify-content-center align-items-center':
+      isItSingleUserComponent
+  }"
+>
+
+  <div class="card shadow py-2 px-3">
+    <div class="d-flex justify-content-start align-items-center">
+      <img [src]="userData.avatar" alt="Avatar" />
+    </div>
+    <span class="mt-2">Frontend Developer</span>
+    <h3 class="fw-bold fs-3" [routerLink]="['/users', userData.id]" >
+      {{ userData.first_name }} {{ userData.last_name }}
+    </h3>
+
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio illum
+      nemo, iusto soluta nostrum culpa tempore. Expedita sed molestias obcaecati
+      exercitationem tempora pariatur totam beatae praesentium iure officia,
+      atque quisquam.
+    </p>
+    <div class="icons d-flex justofy-content-start align-items-center">
+      <a [href]="'mailto:' + userData.email"
+        ><i class="fs-4 fa-solid fa-envelope"></i
+      ></a>
+      <a href=""><i class="fs-4 fa-brands fa-linkedin"></i></a>
+      <a href=""><i class="fs-4 fa-brands fa-github"></i></a>
+      <a href=""><i class="fs-4 fa-brands fa-twitter"></i></a>
+    </div>
+  </div>
+</main>
